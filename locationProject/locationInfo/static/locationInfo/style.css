@@ -1,0 +1,76 @@
+
+html {
+    background: #1e202b;
+    color: #000;
+}
+
+body {
+    color: #bfc1c8;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    background: #1e202b;
+    margin: 0px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    .container:after {
+        content: " ";
+        clear: both;
+        display: block;
+        overflow: hidden;
+        height: 0;
+    }
+
+
+
+.forecast-container {
+    width: 100%;
+    background: #323544;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .forecast-container .forecast {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+        .forecast-container .forecast:nth-child(even) {
+            background-color: #262936;
+        }
+
+
+.forecast-container .forecast .forecast-header {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+.forecast-container .forecast .forecast-content {
+    padding: 50px 20px 50px;
+    text-align: center;
+    font-size: 15px;
+}
+
+    .forecast-container .forecast .forecast-content small {
+        font-size: 16px;
+        font-size: 1.1428571429em;
+    }
+
+

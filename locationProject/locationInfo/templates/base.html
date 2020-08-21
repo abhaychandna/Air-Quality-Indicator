@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>AQI</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'locationInfo/style.css' %}">
+
+</head>
+
+
+<body id="bootstrap-overrides">
+    <div class="container" style="/* margin:100px; */margin-top:20px;">
+
+
+            <h1 style="font-size:40px;text-align:center;margin-bottom: 20px;margin-top: 20px;">
+
+                <span class="my-3">
+                    <img src="/static/locationInfo/images/icon-marker.png">
+                    {{geo.city}}, {{geo.region_name}}, {{geo.country_name}}
+                </span>
+
+            </h1>
+        
+        <div class="forecast-table my-3">
+            <div class="container">
+                <div class="forecast-container">
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <div style="font-size:30px">Air Quality Index</div>
+
+                        </div>
+                        <div class="forecast-content" style="color:{{aqi.data.color}}">
+                            <div style="font-size:25px">{{aqi.data.alert}}</div>
+                            <br>
+                            <div style="font-size:20px">AQI - {{aqi.data.value}}</div>
+                            <br>
+                            <div style="font-size:20px">Temp - {{aqi.data.temp}}<sup>o</sup>C</div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for item in aqi.data.aqiParams reversed %}
+            <div class="col  mx-4 my-4" style="text-align:center;">
+                <div class="card" style="height: 200px;width: 150px;background-color: #2d303d;
+">
+                    <div class="card-body" style="padding:0;">
+                        <h5 class="card-title py-4" style="background-color: #282b35;height:40%;margin:0;">{{item.name}}</h5>
+                        <p class="card-text py-5" style="background-color: #323544;height:60%;font-size:large">{{item.value}}</p>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+           
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
