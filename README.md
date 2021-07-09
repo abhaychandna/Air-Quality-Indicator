@@ -1,5 +1,5 @@
 [WATCH DEMO HERE](https://www.youtube.com/watch?v=QKuFxTnNCE8)
-# Air-Quality-Index
+# Air-Quality-Indicator
 Describes the Air Quality in your location 
 
 It uses REST API from http://airpollutionapi.com/
